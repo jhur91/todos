@@ -7,7 +7,6 @@
     <link rel='stylesheet' href='/stylesheets/styleSkillPage.css' />
 </head>
 <body>
-    <body>
         <h1>To Do List</h1>
         <ul>
           <% todos.forEach(function(t) { %>
@@ -16,7 +15,7 @@
                 class="delete-form" method="POST">
                 <button type="submit">X</button>
               </form>
-            <a href="/todos/<%= t.id %>"><%= t.todo %></a>
+            <%= t.todo %>
             </li>
           <% }); %>
           <hr>
@@ -26,7 +25,6 @@
             <button type="submit">ADD TO DO</button>
           </form>
         </ul>
-        <!-- <a href="/devskills/new">Add Skill</a> -->
-      </body>
+ 
 </body>
 </html>
