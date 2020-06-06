@@ -6,7 +6,7 @@ var logger = require('morgan');
 var methodOverride = require('method-override');    //this is requiring middleware
 
 var indexRouter = require('./routes/index');
-var devskillsRouter = require('./routes/devskills');
+var toDosRouter = require('./routes/todos');
 
 var app = express();
 
@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method')); // this was added middleware
 
 app.use('/', indexRouter);
-app.use('/devskills', devskillsRouter);
+app.use('/todos', toDosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
