@@ -8,16 +8,21 @@
 </head>
 <body>
         <h1>To Do List</h1>
+        <% if(todos.length) { %> 
         <ul>
           <% todos.forEach(function(t) { %>
+            
             <li>
               <form action="/todos/<%= t.id %>?_method=DELETE"
                 class="delete-form" method="POST">
-                <button type="submit">X</button>
+                <button type="submit">Delete</button>
               </form>
-            <%= t.todo %>
+              <%= t.todo %>
             </li>
           <% }); %>
+          <% } else { %> 
+            <p>There is nothing To Do yet!</p>
+            <% }; %> 
           <hr>
           <form action="/todos" method="POST" autocomplete="off">
             <input type="text" name="todo">
